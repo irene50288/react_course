@@ -1,13 +1,7 @@
-import Arithmetic from './Arithmetic'
+import Receipt from './Receipt'
 import React, { Component } from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 
-console.log(`1 + 2 = ${Arithmetic.add(1,2)}`);
-console.log(`2 - 1 = ${Arithmetic.subtract(2,1)}`);
-console.log(`2 * 3 = ${Arithmetic.multiply(2,3)}`);
-console.log(`6 / 3 = ${Arithmetic.divide(6,3)}`);
-console.log(`6 div 4 = ${Arithmetic.intDivide(6,4)}`);
-console.log(`6 mod 4 = ${Arithmetic.remainder(6,4)}`);
 
 
 class App extends Component {
@@ -16,14 +10,32 @@ class App extends Component {
     }
 
     render() {
+        const receipt = new Receipt([]);
+        receipt.add( { id: 1, name: 'Milk', price: 5.99 } );
+        receipt.add( { id: 2, name: 'Eggs', price: 3.56 } );
+        receipt.add( { id: 3, name: 'Sugar', price: 4.25 } );
+        receipt.add( { id: 4, name: 'Flour', price: 9.74 } );
+        receipt.add( { id: 5, name: 'Pizza', price: 10.99 } );
+        receipt.remove(5);
+
         return (
-            <div>Hello World!</div>
+            <div>
+                <ul>
+                    {
+                        receipt.products.map( product => {
+                            return <li key={product.id}>{product.name}..........{product.price}</li>
+                        })
+                    }
+                </ul>
+                <p>Total amount..........{receipt.totalAmount}</p>
+                <p>Total price..........{receipt.totalPrice}</p>
+            </div>
         )
     }
 
 }
 
-ReactDom.render(
+ReactDOM.render(
     <App/>,
     document.getElementById('root')
 )
