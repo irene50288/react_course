@@ -1,0 +1,32 @@
+.receipt {
+    background-color: #DDDDDD;
+    box-shadow: 2px 2px 5px 0 #AAA;
+    float: left;
+    padding: 5px 15px 25px;
+    width: 300px;
+}
+.receipt ul {
+    padding: 0;
+}
+.receipt li {
+    overflow: hidden;
+    list-style: none;
+}
+.product-name {
+    float: left;
+    display: block;
+    margin-right: 10px;
+}
+.product-price {
+    display: block;
+    overflow: hidden;
+    text-align: right;
+}
+.product-price:after {
+    display: block;
+    content: '';
+    border-bottom: 1px dashed;
+    overflow: hidden;
+    margin-right: 50px;
+    box-sizing: border-box;
+}
