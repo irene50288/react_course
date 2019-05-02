@@ -9,18 +9,27 @@ import cartContext from '../CartContext';
 class ProductCard extends Component {
   constructor(props) {
     super(props);
-    this.state = { amount: 1 };
+    this.state = {
+      amount: 1
+    }
   }
 
   amountChange(amount) {
     this.setState({amount})
   }
 
+  onDragStart(e, product) {
+    e.dataTransfer.setData('text/JSON', JSON.stringify(product));
+  }
+
 
   render() {
     const product = this.props.product;
     return (
-      <div>
+      <div draggable
+        onDragStart={(e) => this.onDragStart(e, product)}
+        style={{border: '1px solid black'}}
+      >
         <TextBox text={product.title}/>
         <Price price={product.price}/>
         <Image imageUrl={product.imageUrl} text={product.title}/>
