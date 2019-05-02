@@ -7,6 +7,15 @@ import cartContext from '../CartContext';
 
 
 class ProductCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { amount: 1 };
+  }
+
+  amountChange(amount) {
+    this.setState({amount})
+  }
+
 
   render() {
     const product = this.props.product;
@@ -15,10 +24,11 @@ class ProductCard extends Component {
         <TextBox text={product.title}/>
         <Price price={product.price}/>
         <Image imageUrl={product.imageUrl} text={product.title}/>
+        <input type='number' min='1' value={this.state.amount} onChange={e => this.amountChange(e.currentTarget.value)}/>
         <cartContext.Consumer>
           {
             ({cartProducts, addToCart}) => (
-              <button onClick={() => addToCart(product) }>Add to cart</button>
+              <button onClick={() => addToCart(product, this.state.amount) }>Add to cart</button>
             )
           }
         </cartContext.Consumer>

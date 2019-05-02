@@ -8,9 +8,13 @@ class CatalogPage extends Component {
   constructor(props) {
     super(props);
 
-    this.addToCart = (product) => {
+    this.addToCart = (product, amount) => {
+      var productsToAdd = [];
+      for (let i=0; i<amount; i++) {
+        productsToAdd.push(product);
+      }
       this.setState(state => ({
-        cartProducts: [...state.cartProducts, product]
+        cartProducts: [...state.cartProducts, ...productsToAdd]
       }));
     }
 
