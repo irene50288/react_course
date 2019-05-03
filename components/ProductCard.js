@@ -12,7 +12,10 @@ class ProductCard extends Component {
   render() {
     const product = this.props.product;
     return (
-      <div>
+      <div draggable
+        onDragStart={(e) => this.onDragStart(e, product)}
+        style={{border: '1px solid black'}}
+      >
         <TextBox text={product.title}/>
         <Price price={product.price}/>
         <Image imageUrl={product.imageUrl} text={product.title}/>

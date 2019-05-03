@@ -7,7 +7,7 @@ class CartComntainer extends Component {
   constructor(props) {
     super(props);
 
-    this.addToCart = (product, amount) => {
+    this.addToCart = (product, amount=1) => {
       var productsToAdd = [];
       for (let i=0; i<amount; i++) {
         productsToAdd.push(product);
