@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CatalogPage from './components/CatalogPage';
+import CartContainer from './components/CartContainer';
 
 ReactDOM.render(
-  <CatalogPage/>,
+  <CartContainer/>,
   document.getElementById('root')
 );
