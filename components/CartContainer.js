@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CatalogPage from './CatalogPage';
 import cartContext from "../CartContext";
 
-class CartComntainer extends Component {
+class CartContainer extends Component {
 
   constructor(props) {
     super(props);
@@ -19,18 +19,15 @@ class CartComntainer extends Component {
     }
   }
 
-  getCartProducts() {
-    return this.state.cartProducts;
-  }
-
   render() {
+    const { children } = this.props;
     return (
       <cartContext.Provider value={this.state}>
-        <CatalogPage/>
+        {children}
       </cartContext.Provider>
     )
 
   }
 }
 
-export default CartComntainer;
+export default CartContainer;
