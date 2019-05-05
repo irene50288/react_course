@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Image from './Image';
 import TextBox from './TextBox';
 import Price from './Price';
-import cartContext from '../CartContext';
+import AddToCart from './AddToCart';
+
 
 
 class ProductCard extends Component {
@@ -15,13 +16,7 @@ class ProductCard extends Component {
         <TextBox text={product.title}/>
         <Price price={product.price}/>
         <Image imageUrl={product.imageUrl} text={product.title}/>
-        <cartContext.Consumer>
-          {
-            ({cartProducts, addToCart}) => (
-              <button onClick={() => addToCart(product) }>Add to cart</button>
-            )
-          }
-        </cartContext.Consumer>
+        <AddToCart product={product}/>
       </div>
     )
   }
