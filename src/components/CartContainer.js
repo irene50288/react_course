@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import CatalogPage from './CatalogPage';
-import cartContext from "../CartContext";
+import CatalogPage from './pages/CatalogPage';
+import cartContext from "../../CartContext";
 
 class CartContainer extends Component {
 
