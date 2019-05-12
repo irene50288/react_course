@@ -6,18 +6,18 @@ import { withRouter } from "react-router";
 class CartButton extends Component {
 
   render() {
-    console.log('props in render', this.props);
     return (
+      <button onClick={() => {this.props.history.push(cartPagePath())}} className='cartButton'>
+        Cart
         <cartContext.Consumer>
           {
-            ({cartProducts, addToCart}) => (
-              <button onClick={() => {this.props.history.push(cartPagePath(), {products: cartProducts})}} className='cartButton'>
-                Cart
-                <span className='counter'>{cartProducts.length}</span>
-              </button>
+            ({cartProducts, addToCart, removeFromCart}) => (
+              <span className='counter'>{cartProducts.length}</span>
             )
           }
         </cartContext.Consumer>
+      </button>
+
     )
   }
 }

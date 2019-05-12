@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import { withRouter } from "react-router";
-import CartContainer from "../CartContainer";
 import CatalogPage from "./CatalogPage";
 
 class MainPage extends Component{
@@ -9,9 +8,7 @@ class MainPage extends Component{
     return (
       <Fragment>
         { state && <p>{state.message}</p>}
-        <CartContainer>
-          <CatalogPage/>
-        </CartContainer>
+        <CatalogPage/>
       </Fragment>
 
     )

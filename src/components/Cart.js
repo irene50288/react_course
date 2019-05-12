@@ -1,26 +1,26 @@
 import React, { Component } from "react";
 import {Redirect, withRouter} from "react-router";
-import Catalog from "./Catalog";
+import CartProductsList from './CartProductsList';
 import {mainPath} from "../helpers/routes";
+import cartContext from "../../CartContext";
 
-class Cart extends Component {
-  render() {
-    var products;
-    if (this.props.location.state)
-      products = this.props.location.state.products;
-    else
-      products = [];
-    return (
-      products.length > 0
-      ?
-        <Catalog products={products}/>
-      :
-        <Redirect to={{
-          pathname: mainPath(),
-          state: {message: 'Your cart is empty'}
-        }}/>
-    )
-  }
+const Cart = () => {
+  return(
+    <cartContext.Consumer>
+      {
+        ({cartProducts, addToCart, removeFromCart}) => (
+          cartProducts.length > 0
+            ?
+            <CartProductsList products={cartProducts}/>
+            :
+            <Redirect to={{
+              pathname: mainPath(),
+              state: {message: 'Your cart is empty'}
+            }}/>
+        )
+      }
+    </cartContext.Consumer>
+  )
 }
 
-export default withRouter(Cart);
+export default Cart;

@@ -7,7 +7,6 @@ class ProductPage extends Component {
 
   render() {
     const product = Products.find(product => {
-      console.log(this.props.productId);
       return product.id == this.props.productId;
     });
     return(
