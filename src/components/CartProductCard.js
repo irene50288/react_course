@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Image from './Image';
 import TextBox from './TextBox';
 import Price from './Price';
-import cartContext from '../CartContext';
+import cartContext from '../../CartContext';
 
 
-class ProductCard extends Component {
+class CartProductCard extends Component {
 
   render() {
     const product = this.props.product;
@@ -17,17 +17,18 @@ class ProductCard extends Component {
         <Image imageUrl={product.imageUrl} text={product.title}/>
         <cartContext.Consumer>
           {
-            ({cartProducts, addToCart}) => (
-              <button onClick={() => addToCart(product) }>Add to cart</button>
+            ({cartProducts, addToCart, removeFromCart}) => (
+              <button onClick={() => removeFromCart(product.id) }>Remove from cart</button>
             )
           }
         </cartContext.Consumer>
+
       </div>
     )
   }
 }
 
-ProductCard.propTypes = {
+CartProductCard.propTypes = {
   product: PropTypes.shape({
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
@@ -35,4 +36,4 @@ ProductCard.propTypes = {
   })
 };
 
-export default ProductCard;
+export default CartProductCard;

@@ -1,7 +1,7 @@
-import Products from "../constants/Products";
-import Catalog from "./Catalog";
+import Products from "../../constants/Products";
+import Catalog from "../Catalog";
 import React, {Component, Fragment} from "react";
-import Cart from './Cart';
+import CartButton from '../CartButton';
 
 class CatalogPage extends Component {
 
@@ -10,7 +10,7 @@ class CatalogPage extends Component {
     return (
       <Fragment>
         <Catalog products={products}/>
-        <Cart/>
+        <CartButton/>
       </Fragment>
     )
   }

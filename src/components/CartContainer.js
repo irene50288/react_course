@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import CatalogPage from './CatalogPage';
-import cartContext from "../CartContext";
+import cartContext from "../../CartContext";
 
 class CartContainer extends Component {
 
@@ -11,11 +10,22 @@ class CartContainer extends Component {
       this.setState(state => ({
         cartProducts: [...state.cartProducts, product]
       }));
-    }
+    };
+
+    this.removeFromCart = (productId) => {
+      const products = this.state.cartProducts;
+      const index = products.findIndex((element) => { return element.id == productId });
+      products.splice(index, 1);
+      this.setState({
+        cartProducts: products,
+      })
+    };
+
 
     this.state = {
       cartProducts: [],
-      addToCart: this.addToCart
+      addToCart: this.addToCart,
+      removeFromCart: this.removeFromCart,
     }
   }
 
