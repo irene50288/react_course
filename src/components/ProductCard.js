@@ -14,7 +14,7 @@ class ProductCard extends Component {
       <div>
         <TextBox text={product.title}/>
         <Price price={product.price}/>
-        <Image imageUrl={product.imageUrl} text={product.title}/>
+        <Image photos={product.photos}/>
         <cartContext.Consumer>
           {
             ({cartProducts, addToCart}) => (
@@ -31,7 +31,7 @@ ProductCard.propTypes = {
   product: PropTypes.shape({
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    imageUrl: PropTypes.string.isRequired
+    photos: PropTypes.array.isRequired
   })
 };
 
