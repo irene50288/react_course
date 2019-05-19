@@ -25,9 +25,12 @@ class CatalogPage extends Component {
       .then(({ body: { items } }) => {
         const products = [];
         items.map((item) =>{
-          products.push(item.fields);
+          //the id of the product is inside item.sys.id
+          const product = Object.assign(item.fields);
+          product.id = item.sys.id;
+          products.push(product);
         })
-        console.log(products);
+
         this.setState({ products })
       })
   }

@@ -12,7 +12,7 @@ class ProductCard extends Component {
     const product = this.props.product;
     return (
       <div>
-        <TextBox text={product.title}/>
+        <TextBox text={product.title} id={product.id}/>
         <Price price={product.price}/>
         <Image photos={product.photos}/>
         <cartContext.Consumer>
@@ -28,11 +28,7 @@ class ProductCard extends Component {
 }
 
 ProductCard.propTypes = {
-  product: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    photos: PropTypes.array.isRequired
-  })
+  product: PropTypes.object
 };
 
 export default ProductCard;

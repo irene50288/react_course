@@ -4,24 +4,28 @@ import PropTypes from 'prop-types';
 class Image extends Component {
   constructor(props) {
     super(props);
-    const photos = this.props.photos;
+
     this.state = {
-      photos: photos,
-      activePhoto: photos[0]
+      activePhoto: 0
     }
   }
 
-  //TODO add change activePhoto on small img click
+  showPhoto(photo) {
+    this.setState({ activePhoto: photo })
+  }
 
   render() {
+    const photos = this.props.photos;
     return (
       <div>
-        <img className='bigImage' src={this.state.activePhoto} width='100' height='100'/>
+        <img className='bigImage' src={ photos[this.state.activePhoto]} width='100' height='100'/>
         <ul>
-            { this.state.photos.map((imageUrl, key) => {
+            { photos.map((photo, key) => {
               return (
                 <li key={key}>
-                  <img src={imageUrl} width='20' height='20'/>
+                  <button onClick={() => this.showPhoto(key)}>
+                    <img src={photo} width='30' height='30' />
+                  </button>
                 </li>
               )
             }) }
@@ -32,7 +36,7 @@ class Image extends Component {
 }
 
 Image.propTypes = {
-  photos: PropTypes.array.isRequired,
+  photos: PropTypes.array,
 };
 
 export default Image;
