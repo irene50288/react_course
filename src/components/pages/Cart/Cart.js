@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {Redirect, withRouter} from "react-router";
 import CartProductsList from './CartProductsList';
-import {mainPath} from "../helpers/routes";
-import cartContext from "../../CartContext";
+import {mainPath} from "../../../helpers/routes";
+import cartContext from "../../../helpers/contexts/CartContext";
 
 const Cart = () => {
   return(

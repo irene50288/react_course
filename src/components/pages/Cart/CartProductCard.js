@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Image from './Image';
-import TextBox from './TextBox';
-import Price from './Price';
-import cartContext from '../../CartContext';
+import Image from '../shared/Image';
+import TextBox from '../shared/TextBox';
+import Price from '../shared/Price';
+import cartContext from '../../../helpers/contexts/CartContext';
 
 
 class CartProductCard extends Component {

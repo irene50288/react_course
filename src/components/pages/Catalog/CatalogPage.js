@@ -1,7 +1,7 @@
 import request from 'superagent';
-import Catalog from "../Catalog";
+import Catalog from "./Catalog";
 import React, {Component, Fragment} from "react";
-import CartButton from '../CartButton';
+import CartButton from '../Cart/CartButton';
 
 class CatalogPage extends Component {
   constructor(props) {
