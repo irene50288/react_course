@@ -10,7 +10,7 @@ class Price extends Component {
 }
 
 Price.propTypes = {
-  price: PropTypes.number.isRequired
+  price: PropTypes.number
 };
 
 export default Price;

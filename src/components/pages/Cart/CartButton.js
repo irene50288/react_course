@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import cartContext from '../../CartContext';
-import {cartPagePath} from "../helpers/routes";
+import cartContext from '../../../helpers/contexts/CartContext';
+import {cartPagePath} from "../../../helpers/routes";
 import { withRouter } from "react-router";
 
 class CartButton extends Component {

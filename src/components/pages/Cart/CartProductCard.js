@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Image from './Image';
-import TextBox from './TextBox';
-import Price from './Price';
-import cartContext from '../../CartContext';
+import Image from '../shared/Image';
+import TextBox from '../shared/TextBox';
+import Price from '../shared/Price';
+import cartContext from '../../../helpers/contexts/CartContext';
 
 
 class CartProductCard extends Component {
@@ -12,9 +12,9 @@ class CartProductCard extends Component {
     const product = this.props.product;
     return (
       <div>
-        <TextBox text={product.title}/>
+        <TextBox text={product.title} id={product.id}/>
         <Price price={product.price}/>
-        <Image imageUrl={product.imageUrl} text={product.title}/>
+        <Image photos={product.photos}/>
         <cartContext.Consumer>
           {
             ({cartProducts, addToCart, removeFromCart}) => (
@@ -32,7 +32,7 @@ CartProductCard.propTypes = {
   product: PropTypes.shape({
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    imageUrl: PropTypes.string.isRequired
+    photos: PropTypes.array.isRequired
   })
 };
 
