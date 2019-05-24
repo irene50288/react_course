@@ -1,5 +1,7 @@
 import CatalogPage from '../pages/Catalog/CatalogPage';
 import {connect} from "react-redux";
+import * as catalogActions from '../../actions/Catalog';
+import {bindActionCreators} from "redux";
 
 const mapStateToProps = (state) => ({
   products: state.catalog.products,
@@ -9,11 +11,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchCatalog() {
-      dispatch(fetchCatalog());
-    }
+    fetchCatalog: bindActionCreators(catalogActions.fetchCatalog, dispatch)
   }
 }
 
-connect(mapStateToProps, mapDispatchToProps)(CatalogPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CatalogPage);
 

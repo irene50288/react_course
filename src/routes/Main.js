@@ -1,9 +1,10 @@
 import MainPage from "../components/pages/Main/MainPage";
+import CatalogContainer from "../components/containers/CatalogContainer";
 import {mainPath} from "../helpers/routes";
 
 export default {
   path: mainPath(),
-  component: MainPage,
+  component: CatalogContainer,
   exact: true,
   strict: true,
 }

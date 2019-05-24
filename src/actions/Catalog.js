@@ -6,10 +6,13 @@ const requestProducts = () => ({
   type: types.FETCH_PRODUCTS_REQUEST
 })
 
-const receiveProducts = (products) => ({
-  type: types.FETCH_PRODUCTS_SUCCESS,
-  products
-})
+const receiveProducts = (products) => {
+  return {
+    type: types.FETCH_PRODUCTS_SUCCESS,
+    products
+  }
+
+}
 
 const errorProducts = () => ({
   type: types.FETCH_PRODUCTS_ERROR
