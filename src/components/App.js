@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import { createBrowserHistory } from 'history';
 import {Router, Route, Switch} from "react-router-dom";
 import MainMenu from './MainMenu';
-import CartContainer from './pages/Cart/CartContainer';
+import CartContainer from './containers/CartContainer';
 import store from '../store';
 
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from '../shared/Image';
 import TextBox from '../shared/TextBox';
 import Price from '../shared/Price';
-import cartContext from '../../../helpers/contexts/CartContext';
+import cartContext from '~src/helpers/contexts/CartContext';
 
 
 class CartProductCard extends Component {

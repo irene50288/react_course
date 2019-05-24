@@ -1,6 +1,6 @@
 import CatalogPage from '../pages/Catalog/CatalogPage';
 import {connect} from "react-redux";
-import * as catalogActions from '../../actions/Catalog';
+import * as catalogActions from '~src/actions/Catalog';
 import {bindActionCreators} from "redux";
 
 const mapStateToProps = (state) => ({

@@ -9,7 +9,7 @@ export default function (state = initialState, action) {
     case types.ADD_TO_CART:
       return {
         ...state,
-        products: state.products.push(action.product)
+        products: [...state.products, action.product]
       }
     case types.REMOVE_FROM_CART:
       return {

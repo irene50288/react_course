@@ -1,4 +1,3 @@
-import request from 'superagent';
 import Catalog from "./Catalog";
 import React, {Component, Fragment} from "react";
 import CartButton from '../Cart/CartButton';

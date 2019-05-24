@@ -1,11 +1,11 @@
 import * as types from '../constants/actionTypes/CartActionTypes';
 
-const addToCart = (product) => ({
+export const addToCart = (product) => ({
   type: types.ADD_TO_CART,
   product
 })
 
-const removeFromCart = (product) => ({
+export const removeFromCart = (id) => ({
   type: types.REMOVE_FROM_CART,
-  product
+  id
 })
