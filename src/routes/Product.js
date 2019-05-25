@@ -1,14 +1,14 @@
 import React from 'react';
-import {productPath} from "../helpers/routes";
-import ProductPage from "../components/pages/Catalog/ProductPage";
+import {productPath} from '~src/helpers/routes';
+import ProductPage from '~src/components/pages/Catalog/ProductPage';
 
 export default {
   path: productPath(),
   exact: true,
   strict: true,
-  render: ({ match }) => {
+  render: ({match}) => {
     return (
       <ProductPage productId={match.params.id} />
-    )
-  }
-}
+    );
+  },
+};

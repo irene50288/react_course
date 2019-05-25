@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from 'react';
-import { withRouter } from "react-router";
-import CatalogPage from "../Catalog/CatalogPage";
+import {withRouter} from 'react-router';
+import CatalogPage from '~src/components/Catalog/CatalogPage';
 
-class MainPage extends Component{
+class MainPage extends Component {
   render() {
     const state = this.props.location.state;
     return (
@@ -11,7 +11,7 @@ class MainPage extends Component{
         <CatalogPage/>
       </Fragment>
 
-    )
+    );
   }
 }
 

@@ -1,21 +1,23 @@
-import * as types from '../constants/actionTypes/CartActionTypes';
+import * as types from '~src/constants/actionTypes/CartActionTypes';
 
 const initialState = {
   products: [],
 };
 
-export default function (state = initialState, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case types.ADD_TO_CART:
       return {
         ...state,
-        products: [...state.products, action.product]
-      }
+        products: [...state.products, action.product],
+      };
     case types.REMOVE_FROM_CART:
       return {
         ...state,
-        products: state.products.filter((product) => { return product.id !== action.id })
-      }
+        products: state.products.filter((product) => {
+          return product.id !== action.id;
+        }),
+      };
     default:
       return state;
   }

@@ -1,6 +1,6 @@
-import { createContext } from 'react';
+import {createContext} from 'react';
 
 export default createContext({
   cartProducts: [],
-  addToCart: (product) => {}
+  addToCart: (product) => {},
 });
