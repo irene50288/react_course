@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Image from '../shared/Image';
-import TextBox from '../shared/TextBox';
-import Price from '../shared/Price';
-import cartContext from '../../../helpers/contexts/CartContext';
+import Image from '~src/components/pages/shared/Image';
+import TextBox from '~src/components/pages/shared/TextBox';
+import Price from '~src/components/pages/shared/Price';
+import cartContext from '~src/helpers/contexts/CartContext';
 
 
 class ProductCard extends Component {
-
   render() {
     const product = this.props.product;
     return (
@@ -23,12 +22,12 @@ class ProductCard extends Component {
           }
         </cartContext.Consumer>
       </div>
-    )
+    );
   }
 }
 
 ProductCard.propTypes = {
-  product: PropTypes.object
+  product: PropTypes.object,
 };
 
 export default ProductCard;

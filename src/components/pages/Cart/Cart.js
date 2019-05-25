@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import {Redirect, withRouter} from "react-router";
+import React, {Component} from 'react';
+import {Redirect, withRouter} from 'react-router';
 import CartProductsList from './CartProductsList';
-import {mainPath} from "../../../helpers/routes";
-import cartContext from "../../../helpers/contexts/CartContext";
+import {mainPath} from '~src/helpers/routes';
+import cartContext from '~src/helpers/contexts/CartContext';
 
 const Cart = () => {
-  return(
+  return (
     <cartContext.Consumer>
       {
         ({cartProducts, addToCart, removeFromCart}) => (
@@ -15,12 +15,12 @@ const Cart = () => {
             :
             <Redirect to={{
               pathname: mainPath(),
-              state: {message: 'Your cart is empty'}
+              state: {message: 'Your cart is empty'},
             }}/>
         )
       }
     </cartContext.Consumer>
-  )
-}
+  );
+};
 
 export default Cart;

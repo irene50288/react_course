@@ -1,9 +1,9 @@
-import MainPage from "../components/pages/Main/MainPage";
-import {mainPath} from "../helpers/routes";
+import CatalogContainer from '~src/components/containers/CatalogContainer';
+import {mainPath} from '~src/helpers/routes';
 
 export default {
   path: mainPath(),
-  component: MainPage,
+  component: CatalogContainer,
   exact: true,
   strict: true,
-}
+};

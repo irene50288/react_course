@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import cartContext from '../../../helpers/contexts/CartContext';
-import {cartPagePath} from "../../../helpers/routes";
-import { withRouter } from "react-router";
+import React, {Component} from 'react';
+import cartContext from '~src/helpers/contexts/CartContext';
+import {cartPagePath} from '~src/helpers/routes';
+import {withRouter} from 'react-router';
 
 class CartButton extends Component {
-
   render() {
     return (
-      <button onClick={() => {this.props.history.push(cartPagePath())}} className='cartButton'>
+      <button onClick={() => {
+        this.props.history.push(cartPagePath());
+      }} className='cartButton'>
         Cart
         <cartContext.Consumer>
           {
@@ -18,7 +19,7 @@ class CartButton extends Component {
         </cartContext.Consumer>
       </button>
 
-    )
+    );
   }
 }
 

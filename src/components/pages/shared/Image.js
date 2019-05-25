@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class Image extends Component {
@@ -6,12 +6,12 @@ class Image extends Component {
     super(props);
 
     this.state = {
-      activePhoto: 0
-    }
+      activePhoto: 0,
+    };
   }
 
   showPhoto(photo) {
-    this.setState({ activePhoto: photo })
+    this.setState({activePhoto: photo});
   }
 
   render() {
@@ -20,18 +20,18 @@ class Image extends Component {
       <div>
         <img className='bigImage' src={ photos[this.state.activePhoto]} width='100' height='100'/>
         <ul>
-            { photos.map((photo, key) => {
-              return (
-                <li key={key}>
-                  <button onClick={() => this.showPhoto(key)}>
-                    <img src={photo} width='30' height='30' />
-                  </button>
-                </li>
-              )
-            }) }
+          { photos.map((photo, key) => {
+            return (
+              <li key={key}>
+                <button onClick={() => this.showPhoto(key)}>
+                  <img src={photo} width='30' height='30' />
+                </button>
+              </li>
+            );
+          }) }
         </ul>
       </div>
-    )
+    );
   }
 }
 
