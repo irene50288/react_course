@@ -1,7 +1,7 @@
 import {cartPagePath} from '~src/helpers/routes';
-import CartPage from '~src/components/pages/Cart/CartPage';
+import CartPageContainer from '~src/components/containers/CartPageContainer';
 
 export default {
   path: cartPagePath(),
-  component: CartPage,
+  component: CartPageContainer,
 };

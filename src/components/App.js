@@ -2,7 +2,6 @@ import React, {Fragment} from 'react';
 import {createBrowserHistory} from 'history';
 import {Router, Route, Switch} from 'react-router-dom';
 import MainMenu from './MainMenu';
-import CartContainer from './containers/CartContainer';
 import store from '~src/store/';
 
 
@@ -16,18 +15,16 @@ const RouteWithSubroutes = (route, key) => {
 const App = () => {
   return (
     <Provider store={store}>
-      <CartContainer>
-        <Router history={createBrowserHistory()}>
-          <Fragment>
-            <MainMenu/>
-            <Switch>
-              {routes.map((route, key) => {
-                return RouteWithSubroutes(route, key);
-              })}
-            </Switch>
-          </Fragment>
-        </Router>
-      </CartContainer>
+      <Router history={createBrowserHistory()}>
+        <Fragment>
+          <MainMenu/>
+          <Switch>
+            {routes.map((route, key) => {
+              return RouteWithSubroutes(route, key);
+            })}
+          </Switch>
+        </Fragment>
+      </Router>
     </Provider>
 
   );

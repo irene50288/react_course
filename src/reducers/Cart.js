@@ -9,15 +9,18 @@ export default function(state = initialState, action) {
     case types.ADD_TO_CART:
       return {
         ...state,
-        products: [...state.products, action.product],
+        products: action.products,
       };
     case types.REMOVE_FROM_CART:
       return {
         ...state,
-        products: state.products.filter((product) => {
-          return product.id !== action.id;
-        }),
+        products: action.products,
       };
+    case types.LOAD_CART_STATE:
+      return {
+        ...state,
+        products: action.products,
+      }
     default:
       return state;
   }

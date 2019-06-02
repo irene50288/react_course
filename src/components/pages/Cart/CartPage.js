@@ -1,9 +1,9 @@
 import React from 'react';
 import Cart from './Cart';
 
-const CartPage = () => {
+const CartPage = (props) => {
   return (
-    <Cart />
+    <Cart props={props} />
   );
 };
 

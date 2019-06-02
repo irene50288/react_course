@@ -1,6 +1,6 @@
 import Catalog from './Catalog';
 import React, {Component, Fragment} from 'react';
-import CartButton from '~src/components/pages/Cart/CartButton';
+import CartButtonContainer from '~src/components/containers/CartButtonContainer';
 
 class CatalogPage extends Component {
   componentDidMount() {
@@ -10,11 +10,17 @@ class CatalogPage extends Component {
   render() {
     return (
       <Fragment>
-        <Catalog products={this.props.products}/>
-        <CartButton/>
+        { this.props.products
+          ? <Catalog products={this.props.products}/>
+          : <div> no products</div>
+
+        }
+        <CartButtonContainer/>
       </Fragment>
     );
   }
 }
 
 export default CatalogPage;
+
+

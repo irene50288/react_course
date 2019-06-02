@@ -1,4 +1,5 @@
 import * as types from '~src/constants/actionTypes/ProductsActionTypes';
+import changeData from '~src/helpers/dataStructureHelper';
 
 const initialState = {
   products: [],
@@ -24,7 +25,7 @@ export default function(state = initialState, action) {
         ...state,
         isFetching: false,
         error: false,
-        products: action.products,
+        products: changeData(action.response),
       };
     default:
       return state;
