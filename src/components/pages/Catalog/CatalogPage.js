@@ -3,9 +3,6 @@ import React, {Component, Fragment} from 'react';
 import CartButtonContainer from '~src/components/containers/CartButtonContainer';
 
 class CatalogPage extends Component {
-  componentDidMount() {
-    this.props.fetchCatalog();
-  }
 
   render() {
     return (

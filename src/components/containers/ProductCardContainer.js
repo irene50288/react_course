@@ -6,7 +6,6 @@ import {bindActionCreators} from 'redux';
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: bindActionCreators(cartActions.addToCart, dispatch),
-    // removeFromCart: bindActionCreators(cartActions.removeFromCart, dispatch),
   };
 };
 

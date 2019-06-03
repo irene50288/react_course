@@ -5,7 +5,7 @@ import { apiUrl, accessToken } from "../constants/URLs/URLs";
 function APICall(endpoint, method, query, payload) {
   return new Promise((resolve, reject) => {
 
-    let req = request[method.toLowerCase()](apiUrl)
+    let req = request[method.toLowerCase()](apiUrl+endpoint)
 
     req.set('Authorization', `Bearer ${accessToken}`)
 

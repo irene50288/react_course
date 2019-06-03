@@ -4,9 +4,6 @@ import CartProductsList from './CartProductsList';
 import {mainPath} from '~src/helpers/routes';
 
 class Cart extends Component {
-  componentDidMount() {
-    this.props.loadCartState();
-  }
 
   render() {
     return (

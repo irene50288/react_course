@@ -1,4 +1,4 @@
-export default function changeData({body: {items}}) {
+export function changeData({body: {items}}) {
   const products = [];
   items.map((item) =>{
     // the id of the product is inside item.sys.id
@@ -7,4 +7,10 @@ export default function changeData({body: {items}}) {
     products.push(product);
   });
   return products;
+}
+
+export function changeProduct({body}) {
+  const product = body.fields;
+  product.id = body.sys.id;
+  return product;
 }
