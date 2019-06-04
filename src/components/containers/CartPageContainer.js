@@ -10,8 +10,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: bindActionCreators(actions.addToCart, dispatch),
-    removeFromCart: bindActionCreators(actions.removeFromCart, dispatch),
     loadCartState: bindActionCreators(actions.loadCartState, dispatch),
   };
 };

@@ -11,5 +11,5 @@ export const removeFromCart = (id) => ({
 });
 
 export const loadCartState = () => ({
-  type: types.LOAD_CART_STATE
+    type: types.LOAD_CART_STATE
 })
