@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Image from '~src/components/pages/shared/Image';
 import TextBox from '~src/components/pages/shared/TextBox';
 import Price from '~src/components/pages/shared/Price';
-import cartContext from '~src/helpers/contexts/CartContext';
 
 
 class CartProductCard extends Component {
@@ -14,14 +13,7 @@ class CartProductCard extends Component {
         <TextBox text={product.title} id={product.id}/>
         <Price price={product.price}/>
         <Image photos={product.photos}/>
-        <cartContext.Consumer>
-          {
-            ({cartProducts, addToCart, removeFromCart}) => (
-              <button onClick={() => removeFromCart(product.id) }>Remove from cart</button>
-            )
-          }
-        </cartContext.Consumer>
-
+        <button onClick={() => this.props.removeFromCart(product.id) }>Remove from cart</button>
       </div>
     );
   }

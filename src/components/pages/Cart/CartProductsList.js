@@ -1,4 +1,4 @@
-import CartProductCard from './CartProductCard';
+import CartProductCardContainer from '~src/components/containers/CartProductCardContainer';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ class CartProductsList extends Component {
       <ul>
         {
           products.map((product) => {
-            return <li key = {product.id}><CartProductCard product={product}/></li>;
+            return <li key = {product.id}><CartProductCardContainer product={product}/></li>;
           })
         }
       </ul>

@@ -1,4 +1,4 @@
-import ProductCard from './ProductCard';
+import ProductCardContainer from '~src/components/containers/ProductCardContainer';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ class Catalog extends Component {
       <ul>
         {
           products.map((product) => {
-            return <li key = {product.id}><ProductCard product={product}/></li>;
+            return <li key = {product.id}><ProductCardContainer product={product}/></li>;
           })
         }
       </ul>
