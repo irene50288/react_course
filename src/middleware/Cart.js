@@ -23,23 +23,20 @@ function loadState() {
   }
 }
 
-function nextAction (action, callback) {
-  const newAction = Object.assign({}, action, { callback })
-  return newAction
-}
-
 export default store => next => action => {
 
   const actions = [types.ADD_TO_CART, types.REMOVE_FROM_CART, types.LOAD_CART_STATE]
 
-  if (!action.type in actions )
+  if (!actions.includes(action.type) )
     return next(action);
 
-  if(action.type === types.ADD_TO_CART || action.type === types.REMOVE_FROM_CART)
-    return next(nextAction(action, saveState))
+  if(action.type === types.LOAD_CART_STATE) {
+    const products = loadState();
+    return next(Object.assign({}, action, { products }))
+  }
 
-  if(action.type === types.LOAD_CART_STATE)
-    return next(nextAction(action, loadState))
+  next(action);
+  saveState(store.getState().cart.products);
 
-  return next(action)
+  return;
 }

@@ -9,7 +9,6 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case types.ADD_TO_CART:
       products = [...state.products, action.product]
-      action.callback(products);
       return {
         ...state,
         products,
@@ -18,16 +17,14 @@ export default function(state = initialState, action) {
       products = state.products.filter((product) => {
         return product.id !== action.id;
       });
-      action.callback(products)
       return {
         ...state,
         products,
       };
     case types.LOAD_CART_STATE:
-      products = action.callback();
       return {
         ...state,
-        products,
+        products: action.products,
       };
     default:
       return state;
