@@ -1,10 +1,12 @@
 import React from 'react';
-import {Field, reduxForm, SubmissionError} from "redux-form";
+import {Field, reduxForm} from "redux-form";
 import { connect } from 'react-redux';
-import * as actions from '~src/actions/Order';
 import * as RegExps from '~src/constants/RegExps';
+import * as types from '~src/constants/actionTypes/CartActionTypes';
+import pretendToMakeRequest from '~src/helpers/fakeOrderRequest';
+import prepareProducts from '~src/helpers/prepareProducts';
 
-const renderField = ({ input, label, type, meta: {touched, error, warning} }) => (
+const renderField = ({ input, label, type, meta: {touched, error} }) => (
   <div className={error? 'red': ''}>
     <label>{label}</label>
     <input {...input} type={type}/>
@@ -32,24 +34,42 @@ const validate = ({ fullName, email, phone, address }) => {
 
 }
 
+const submit = (values, dispatch) => {
+  return pretendToMakeRequest(values)
+    .then(() => {
+      dispatch({
+        type: types.CLEAR_CART
+      })
+    })
+    .catch(err => {
+      throw err;
+    })
+}
+
 const OrderForm = ({ handleSubmit }) => {
   return (
     <div>
       <p>Please, provide address information</p>
       <form onSubmit={handleSubmit}>
+        <Field component='input' type='hidden' name='products'/>
         <Field component={renderField} type='text' label='Full Name' name='fullName'/>
         <Field component={renderField} type='text' label='Email' name='email'/>
         <Field component={renderField} type='text' label='Phone' name='phone'/>
         <Field component={renderField} type='text' label='Address' name='address'/>
-        <input type='submit' value='Submit'/>
+        <input type='submit' value='Order'/>
       </form>
     </div>
   )
 }
 
-export default connect(null,
+export default connect(
+  (state) => ({
+    initialValues: {
+      products: prepareProducts(state.cart.products)
+    }
+  }),
   (dispatch) => ({
-    onSubmit: values => dispatch(actions.makeOrder(values))
+    onSubmit: values => submit(values, dispatch)
   })
 )(reduxForm({
   form: 'orderForm',

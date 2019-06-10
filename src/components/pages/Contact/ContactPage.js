@@ -22,7 +22,6 @@ class ContactPage extends Component {
 
     this.handleChange = (fieldName) => {
       return (e) => {
-        console.log('onchange state', this.state)
         this.setState({
           form: {
             values: {
@@ -37,7 +36,6 @@ class ContactPage extends Component {
   }
 
   render() {
-    console.log('render', this.state.form.values);
     const { fullName, email, message } = this.state.form.values;
     return (
       <div>

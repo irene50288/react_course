@@ -8,11 +8,5 @@ const mapStateToProps = (state) => ({
   cartProducts: state.cart.products,
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    // loadCartState: bindActionCreators(actions.loadCartState, dispatch),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(OrderPage);
+export default connect(mapStateToProps)(OrderPage);
 
