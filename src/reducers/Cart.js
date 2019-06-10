@@ -26,6 +26,11 @@ export default function(state = initialState, action) {
         ...state,
         products: action.products,
       };
+    case types.CLEAR_CART:
+      return {
+        ...state,
+        products: [],
+      };
     default:
       return state;
   }

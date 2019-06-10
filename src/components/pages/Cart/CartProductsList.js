@@ -1,18 +1,23 @@
 import CartProductCardContainer from '~src/components/containers/CartProductCardContainer';
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+import { orderPagePath } from '~src/helpers/routes';
 
 class CartProductsList extends Component {
   render() {
     const products = this.props.products;
     return (
-      <ul>
-        {
-          products.map((product) => {
-            return <li key = {product.id}><CartProductCardContainer product={product}/></li>;
-          })
-        }
-      </ul>
+      <Fragment>
+        <ul>
+          {
+            products.map((product) => {
+              return <li key = {product.id}><CartProductCardContainer product={product}/></li>;
+            })
+          }
+        </ul>
+        <Link to={orderPagePath()}>Proceed to order</Link>
+      </Fragment>
     );
   }
 }
