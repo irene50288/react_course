@@ -1,5 +1,5 @@
-import * as types from '/constants/actionTypes/ProductsActionTypes';
-import { changeData } from '/helpers/dataStructureHelper';
+import * as types from 'constants/actionTypes/ProductsActionTypes';
+import { changeData } from 'helpers/dataStructureHelper';
 
 const initialState = {
   products: [],

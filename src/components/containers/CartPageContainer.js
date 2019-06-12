@@ -1,6 +1,6 @@
-import Cart from '/components/pages/Cart/Cart'
+import Cart from 'components/pages/Cart/Cart'
 import {connect} from 'react-redux';
-import * as actions from '/actions/Cart';
+import * as actions from 'actions/Cart';
 import {bindActionCreators} from 'redux';
 
 

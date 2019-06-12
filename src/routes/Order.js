@@ -1,6 +1,6 @@
-import {orderPagePath} from '/helpers/routes';
-import {loadCartState} from '/actions/Cart';
-import OrderPageContainer from "/components/containers/OrderPageContainer";
+import {orderPagePath} from 'helpers/routes';
+import {loadCartState} from 'actions/Cart';
+import OrderPageContainer from "components/containers/OrderPageContainer";
 
 export default {
   path: orderPagePath(),

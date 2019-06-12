@@ -2,9 +2,13 @@
   "name": "homework_2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cleanup": "rm -rf dist .cache",
+    "lint": "eslint --quiet ./src",
+    "lint:fix": "eslint --quiet --fix ./src",
+    "start:dev": "webpack-dev-server --config ./initializers/webpack/webpack.config.js",
+    "start": "parcer ./index.html"
   },
   "keywords": [],
   "author": "",

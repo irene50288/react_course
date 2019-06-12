@@ -1,10 +1,10 @@
 import React from 'react';
 import {Field, reduxForm} from "redux-form";
 import { connect } from 'react-redux';
-import * as RegExps from '/constants/RegExps';
-import * as types from '/constants/actionTypes/CartActionTypes';
-import pretendToMakeRequest from '/helpers/fakeOrderRequest';
-import prepareProducts from '/helpers/prepareProducts';
+import * as RegExps from 'constants/RegExps';
+import * as types from 'constants/actionTypes/CartActionTypes';
+import pretendToMakeRequest from 'helpers/fakeOrderRequest';
+import prepareProducts from 'helpers/prepareProducts';
 
 const renderField = ({ input, label, type, meta: {touched, error} }) => (
   <div className={error? 'red': ''}>

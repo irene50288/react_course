@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import cartContext from '/helpers/contexts/CartContext';
+import cartContext from 'helpers/contexts/CartContext';
 
 class CartWrapper extends Component {
   constructor(props) {

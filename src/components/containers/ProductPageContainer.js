@@ -1,6 +1,6 @@
-import ProductPage from '/components/pages/Catalog/ProductPage';
+import ProductPage from 'components/pages/Catalog/ProductPage';
 import {connect} from 'react-redux';
-import * as productActions from '/actions/Product';
+import * as productActions from 'actions/Product';
 import {bindActionCreators} from 'redux';
 
 const mapStateToProps = (state) => ({
