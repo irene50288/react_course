@@ -1,6 +1,6 @@
-import OrderPage from '~src/components/pages/Order/OrderPage'
+import OrderPage from '/components/pages/Order/OrderPage'
 import {connect} from 'react-redux';
-import * as actions from '~src/actions/Cart';
+import * as actions from '/actions/Cart';
 import {bindActionCreators} from 'redux';
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Redirect, withRouter} from 'react-router';
 import CartProductsList from './CartProductsList';
-import {mainPath} from '~src/helpers/routes';
+import {mainPath} from '/helpers/routes';
 
 class Cart extends Component {
 

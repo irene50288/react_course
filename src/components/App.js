@@ -2,10 +2,10 @@ import React, {Fragment} from 'react';
 import {createBrowserHistory} from 'history';
 import {Router, Route, Switch, matchPath} from 'react-router-dom';
 import MainMenu from './MainMenu';
-import store from '~src/store/';
-import routes from '~src/routes';
+import store from '/store/';
+import routes from '/routes';
 import {Provider} from 'react-redux';
-import prepareData from '~src/helpers/prepareData';
+import prepareData from '/helpers/prepareData';
 
 const history = createBrowserHistory();
 

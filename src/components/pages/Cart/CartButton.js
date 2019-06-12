@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {cartPagePath} from '~src/helpers/routes';
+import {cartPagePath} from '/helpers/routes';
 import {withRouter} from 'react-router';
 
 class CartButton extends Component {

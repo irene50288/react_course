@@ -1,6 +1,6 @@
-import {cartPagePath} from '~src/helpers/routes';
-import CartPageContainer from '~src/components/containers/CartPageContainer';
-import {loadCartState} from '~src/actions/Cart';
+import {cartPagePath} from '/helpers/routes';
+import CartPageContainer from '/components/containers/CartPageContainer';
+import {loadCartState} from '/actions/Cart';
 
 export default {
   path: cartPagePath(),

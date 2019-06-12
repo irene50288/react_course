@@ -1,6 +1,6 @@
-import CartProductCard from '~src/components/pages/Cart/CartProductCard';
+import CartProductCard from '/components/pages/Cart/CartProductCard';
 import {connect} from 'react-redux';
-import * as cartActions from '~src/actions/Cart';
+import * as cartActions from '/actions/Cart';
 import {bindActionCreators} from 'redux';
 
 const mapDispatchToProps = (dispatch) => {

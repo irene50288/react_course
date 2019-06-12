@@ -1,6 +1,6 @@
 import Catalog from './Catalog';
 import React, {Component, Fragment} from 'react';
-import CartButtonContainer from '~src/components/containers/CartButtonContainer';
+import CartButtonContainer from '/components/containers/CartButtonContainer';
 
 class CatalogPage extends Component {
 
