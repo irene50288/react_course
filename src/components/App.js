@@ -1,41 +1,28 @@
+/* globals __CLIENT__, __SERVER__ */
 import React, {Fragment} from 'react';
-import {createBrowserHistory} from 'history';
-import {Router, Route, Switch, matchPath} from 'react-router-dom';
+import {Router, Route, Switch } from 'react-router-dom';
 import MainMenu from './MainMenu';
-import store from 'store/';
-import routes from 'routes';
 import {Provider} from 'react-redux';
-import prepareData from 'helpers/prepareData';
-
-const history = createBrowserHistory();
-
-function historyCallback(location, action) {
-  const state = { params: {}, routes: [] }
-
-  routes.some((route) => {
-    const match = matchPath(location.pathname, route);
-
-    if (match) {
-      state.routes.push(route);
-      Object.assign(state.params, match.params);
-    }
-    return match;
-  })
-
-  prepareData(store, state);
-}
-
-history.listen(historyCallback);
-historyCallback(window.location);
 
 const RouteWithSubroutes = (route, key) => {
-  return <Route key={key} {...route} />;
+  return (<Route key={key} {...route} />);
 };
 
-const App = () => {
+const AppRouter = ({ history, children, location, context }) => {
+  if(__CLIENT__)
+    return (
+      <Router history={history}>{children}</Router>
+    );
+  if(__SERVER__)
+    return (
+      <StaticRouter location={location} context={context}>{children}</StaticRouter>
+    );
+}
+
+const App = ({ history, store, location, context }) => {
   return (
     <Provider store={store}>
-      <Router history={history}>
+      <AppRouter history={history} location={location} context={context}>
         <Fragment>
           <MainMenu/>
           <Switch>
@@ -44,7 +31,7 @@ const App = () => {
             })}
           </Switch>
         </Fragment>
-      </Router>
+      </AppRouter>
     </Provider>
 
   );
