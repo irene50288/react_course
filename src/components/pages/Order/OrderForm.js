@@ -5,6 +5,7 @@ import * as RegExps from 'constants/RegExps';
 import * as types from 'constants/actionTypes/CartActionTypes';
 import pretendToMakeRequest from 'helpers/fakeOrderRequest';
 import prepareProducts from 'helpers/prepareProducts';
+import './Order.css';
 
 const renderField = ({ input, label, type, meta: {touched, error} }) => (
   <div className={error? 'red': ''}>

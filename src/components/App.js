@@ -3,6 +3,7 @@ import React, {Fragment} from 'react';
 import {Router, Route, Switch } from 'react-router-dom';
 import MainMenu from './MainMenu';
 import {Provider} from 'react-redux';
+import routes from 'routes';
 
 const RouteWithSubroutes = (route, key) => {
   return (<Route key={key} {...route} />);
