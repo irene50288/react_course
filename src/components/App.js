@@ -1,6 +1,6 @@
 /* globals __CLIENT__, __SERVER__ */
 import React, {Fragment} from 'react';
-import {Router, Route, Switch } from 'react-router-dom';
+import {Router, StaticRouter, Route, Switch } from 'react-router-dom';
 import MainMenu from './MainMenu';
 import {Provider} from 'react-redux';
 import routes from 'routes';

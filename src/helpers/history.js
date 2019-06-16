@@ -1,11 +1,11 @@
-import {createBrowserHistory} from "history";
+/* globals __CLIENT__, __SERVER__ */
+import {createMemoryHistory} from "history";
 import {matchPath} from "react-router";
 import prepareData from './prepareData';
+import { parse } from 'qs';
 
-const history = createBrowserHistory();
-
-export function historyCallback(store, routes, location) {
-  const state = { params: {}, routes: [] }
+export const historyCallback = (store, routes, location) => {
+  const state = { params: {}, query: {}, routes: [] }
 
   routes.some((route) => {
     const match = matchPath(location.pathname, route);
@@ -13,11 +13,17 @@ export function historyCallback(store, routes, location) {
     if (match) {
       state.routes.push(route);
       Object.assign(state.params, match.params);
+
+      if (__CLIENT__)
+        Object.assign(state.query, parse(location.search.substr(1)));
+
+      if (__SERVER__)
+        state.query = location.query;
     }
     return match;
   })
 
-  prepareData(store, state);
+  return prepareData(store, state);
 }
 
-export default history;
+export default createMemoryHistory();
