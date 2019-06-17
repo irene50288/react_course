@@ -1,6 +1,6 @@
 /* globals __CLIENT__, __SERVER__ */
 import React, {Fragment} from 'react';
-import {Router, StaticRouter, Route, Switch } from 'react-router-dom';
+import {Router, StaticRouter, Route, Switch, IndexRoute } from 'react-router-dom';
 import MainMenu from './MainMenu';
 import {Provider} from 'react-redux';
 import routes from 'routes';
@@ -10,6 +10,7 @@ const RouteWithSubroutes = (route, key) => {
 };
 
 const AppRouter = ({ history, children, location, context }) => {
+  console.log('app router location', location);
   if(__CLIENT__)
     return (
       <Router history={history}>{children}</Router>

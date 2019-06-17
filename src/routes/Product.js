@@ -9,6 +9,7 @@ export default {
   strict: true,
   component: ProductPageContainer,
   prepareData: (store, params) => {
+    console.log('product prepare data params:', params)
     store.dispatch(fetchProduct(params.id));
   },
 };
