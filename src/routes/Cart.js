@@ -6,6 +6,6 @@ export default {
   path: cartPagePath(),
   component: CartPageContainer,
   prepareData: (store) => {
-    store.dispatch(loadCartState());
+    return store.dispatch(loadCartState());
   },
 };

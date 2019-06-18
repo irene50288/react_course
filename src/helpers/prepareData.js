@@ -8,6 +8,6 @@ export default function (store, state) {
 
   return Promise.all(map(
     prepareDataFns,
-      prepareData => prepareData(store, query, params, location)
+      prepareData => (prepareData(store, params, query, location))
   ));
 }

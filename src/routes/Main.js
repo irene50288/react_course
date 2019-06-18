@@ -8,6 +8,6 @@ export default {
   exact: true,
   strict: true,
   prepareData: (store) => {
-    store.dispatch(fetchCatalog());
+    return store.dispatch(fetchCatalog());
   }
 };

@@ -1,5 +1,5 @@
 /* globals __CLIENT__, __SERVER__ */
-import {createMemoryHistory} from "history";
+import {createBrowserHistory} from "history";
 import {matchPath} from "react-router";
 import prepareData from './prepareData';
 import { parse } from 'qs';
@@ -26,4 +26,4 @@ export const historyCallback = (store, routes, location) => {
   return prepareData(store, state);
 }
 
-export default createMemoryHistory();
+export default createBrowserHistory;
