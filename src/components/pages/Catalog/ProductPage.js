@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ProductCardContainer from 'components/containers/ProductCardContainer';
+import Helmet from 'react-helmet';
 
 class ProductPage extends Component {
 
@@ -9,6 +10,9 @@ class ProductPage extends Component {
     }
     return (
       <div>
+        <Helmet>
+          <title>{this.props.product.title}</title>
+        </Helmet>
         <ProductCardContainer product={this.props.product}/>
       </div>
     );

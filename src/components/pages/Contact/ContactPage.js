@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Text from './Text';
 import TextArea from './TextArea';
+import Helmet from 'react-helmet';
 
 class ContactPage extends Component {
   constructor(props) {
@@ -39,6 +40,9 @@ class ContactPage extends Component {
     const { fullName, email, message } = this.state.form.values;
     return (
       <div>
+        <Helmet>
+          <title>Contact Us</title>
+        </Helmet>
         <h1>Contacts</h1>
         <form onSubmit={this.onSubmit}>
           <Text

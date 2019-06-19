@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
 import {Redirect, withRouter} from 'react-router';
 import CartProductsList from './CartProductsList';
 import {mainPath} from 'helpers/routes';
+import Helmet from 'react-helmet';
 
 class Cart extends Component {
 
@@ -9,7 +10,14 @@ class Cart extends Component {
     return (
       this.props.cartProducts.length > 0
         ?
-        <CartProductsList products={this.props.cartProducts}/>
+        <Fragment>
+          <Helmet>
+            <title>
+              Cart
+            </title>
+          </Helmet>
+          <CartProductsList products={this.props.cartProducts}/>
+        </Fragment>
         :
         <Redirect to={{
           pathname: mainPath(),
