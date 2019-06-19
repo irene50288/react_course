@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Image from '~src/components/pages/shared/Image';
-import TextBox from '~src/components/pages/shared/TextBox';
-import Price from '~src/components/pages/shared/Price';
+import Image from 'components/pages/shared/Image';
+import TextBox from 'components/pages/shared/TextBox';
+import Price from 'components/pages/shared/Price';
 
 
 class ProductCard extends Component {

@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {withRouter} from 'react-router';
-import CatalogPage from '~src/components/Catalog/CatalogPage';
+import CatalogPage from 'components/Catalog/CatalogPage';
 
 class MainPage extends Component {
   render() {

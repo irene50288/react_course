@@ -1,8 +1,14 @@
 import {createStore, applyMiddleware} from 'redux';
-import APImiddleware from '~src/middleware/API'
-import CartMiddleware from '~src/middleware/Cart'
-import reducers from '~src/reducers';
+import APImiddleware from 'middleware/API'
+import CartMiddleware from 'middleware/Cart'
+import reducers from 'reducers';
 
-const store = createStore(reducers, applyMiddleware(APImiddleware, CartMiddleware));
+export default function(INITIAL_STATE = {}) {
+  return createStore(
+    reducers,
+    INITIAL_STATE,
+    applyMiddleware(APImiddleware, CartMiddleware)
+  );
 
-export default store;
+}
+

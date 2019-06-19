@@ -1,8 +1,8 @@
-import CartProductCardContainer from '~src/components/containers/CartProductCardContainer';
+import CartProductCardContainer from 'components/containers/CartProductCardContainer';
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import { orderPagePath } from '~src/helpers/routes';
+import { orderPagePath } from 'helpers/routes';
 
 class CartProductsList extends Component {
   render() {

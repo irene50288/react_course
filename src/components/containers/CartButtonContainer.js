@@ -1,7 +1,7 @@
-import CartButton from '~src/components/pages/Cart/CartButton';
+import CartButton from 'components/pages/Cart/CartButton';
 import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
-import *  as cartActions from '~src/actions/Cart';
+import *  as cartActions from 'actions/Cart';
 
 const mapStateToProps = (state) => ({
   cartProducts: state.cart.products,

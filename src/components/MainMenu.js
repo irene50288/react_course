@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {mainPath, cartPagePath, contactPagePath} from '~src/helpers/routes';
+import {mainPath, cartPagePath, contactPagePath} from 'helpers/routes';
 
 const MainMenu = () => {
   return (

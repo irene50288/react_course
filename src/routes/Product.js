@@ -1,7 +1,7 @@
 import React from 'react';
-import {productPath} from '~src/helpers/routes';
-import ProductPageContainer from '~src/components/containers/ProductPageContainer';
-import {fetchProduct} from '~src/actions/Product';
+import {productPath} from 'helpers/routes';
+import ProductPageContainer from 'components/containers/ProductPageContainer';
+import {fetchProduct} from 'actions/Product';
 
 export default {
   path: productPath(),
@@ -9,6 +9,6 @@ export default {
   strict: true,
   component: ProductPageContainer,
   prepareData: (store, params) => {
-    store.dispatch(fetchProduct(params.id));
+    return store.dispatch(fetchProduct(params.id));
   },
 };

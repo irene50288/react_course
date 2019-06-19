@@ -1,11 +1,11 @@
-import {orderPagePath} from '~src/helpers/routes';
-import {loadCartState} from '~src/actions/Cart';
-import OrderPageContainer from "~src/components/containers/OrderPageContainer";
+import {orderPagePath} from 'helpers/routes';
+import {loadCartState} from 'actions/Cart';
+import OrderPageContainer from "components/containers/OrderPageContainer";
 
 export default {
   path: orderPagePath(),
   component: OrderPageContainer,
   prepareData: (store) => {
-    store.dispatch(loadCartState());
+    return store.dispatch(loadCartState());
   },
 };

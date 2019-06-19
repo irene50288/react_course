@@ -1,4 +1,4 @@
-import * as types from '~src/constants/actionTypes/CartActionTypes';
+import * as types from 'constants/actionTypes/CartActionTypes';
 
 function saveState(state) {
   try {

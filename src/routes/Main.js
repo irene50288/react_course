@@ -1,6 +1,6 @@
-import CatalogContainer from '~src/components/containers/CatalogContainer';
-import {mainPath} from '~src/helpers/routes';
-import {fetchCatalog} from "~src/actions/Catalog";
+import CatalogContainer from 'components/containers/CatalogContainer';
+import {mainPath} from 'helpers/routes';
+import {fetchCatalog} from "actions/Catalog";
 
 export default {
   path: mainPath(),
@@ -8,6 +8,6 @@ export default {
   exact: true,
   strict: true,
   prepareData: (store) => {
-    store.dispatch(fetchCatalog());
+    return store.dispatch(fetchCatalog());
   }
 };

@@ -1,6 +1,6 @@
 import request from 'superagent';
 import { stringify } from 'qs';
-import { apiUrl, accessToken } from "../constants/URLs/URLs";
+import { apiUrl, accessToken } from "constants/URLs/URLs";
 
 function APICall(endpoint, method, query, payload) {
   return new Promise((resolve, reject) => {

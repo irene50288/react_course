@@ -1,6 +1,6 @@
-import * as types from '~src/constants/actionTypes/ProductActionTypes';
-import { API_CALL } from "~src/middleware/API";
-import {contentType} from "../constants/URLs/URLs";
+import * as types from 'constants/actionTypes/ProductActionTypes';
+import { API_CALL } from "middleware/API";
+import {contentType} from "constants/URLs/URLs";
 
 export function fetchProduct(id) {
   return {

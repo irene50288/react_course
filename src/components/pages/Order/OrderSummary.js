@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {Redirect} from "react-router";
-import { mainPath } from "~src/helpers/routes";
+import { mainPath } from "helpers/routes";
 
 const calculatePrice = (total, product) => {
   return total + product.price;

@@ -1,4 +1,4 @@
-import ProductCardContainer from '~src/components/containers/ProductCardContainer';
+import ProductCardContainer from 'components/containers/ProductCardContainer';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
