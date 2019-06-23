@@ -10,8 +10,8 @@ const OrderSummary = ({products}) => {
   const price = products.reduce(calculatePrice, 0);
   const taxes = price * 0.3;
   return (
-    products.length > 0
-    ?
+    // products.length > 0
+    // ?
       <Fragment>
         <ul>
           {products.map((product) => (
@@ -22,11 +22,11 @@ const OrderSummary = ({products}) => {
         <p>Taxes: ${(taxes).toFixed(2)}</p>
         <p>Total: ${(price + taxes).toFixed(2)}</p>
       </Fragment>
-    :
-      <Redirect to={{
-        pathname: mainPath(),
-        state: {message: 'Your cart is empty'},
-      }}/>
+    // :
+    //   <Redirect to={{
+    //     pathname: mainPath(),
+    //     state: {message: 'Your cart is empty'},
+    //   }}/>
   )
 }
 

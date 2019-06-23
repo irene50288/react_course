@@ -2,9 +2,8 @@ import React from 'react';
 import {Field, reduxForm} from "redux-form";
 import { connect } from 'react-redux';
 import * as RegExps from '~src/constants/RegExps';
-import * as types from '~src/constants/actionTypes/CartActionTypes';
-import pretendToMakeRequest from '~src/helpers/fakeOrderRequest';
 import prepareProducts from '~src/helpers/prepareProducts';
+import * as actions from '~src/actions/Order';
 
 const renderField = ({ input, label, type, meta: {touched, error} }) => (
   <div className={error? 'red': ''}>
@@ -34,19 +33,8 @@ const validate = ({ fullName, email, phone, address }) => {
 
 }
 
-const submit = (values, dispatch) => {
-  return pretendToMakeRequest(values)
-    .then(() => {
-      dispatch({
-        type: types.CLEAR_CART
-      })
-    })
-    .catch(err => {
-      throw err;
-    })
-}
-
 const OrderForm = ({ handleSubmit }) => {
+
   return (
     <div>
       <p>Please, provide address information</p>
@@ -69,7 +57,7 @@ export default connect(
     }
   }),
   (dispatch) => ({
-    onSubmit: values => submit(values, dispatch)
+    onSubmit: values => dispatch(actions.makeOrder(values, dispatch))
   })
 )(reduxForm({
   form: 'orderForm',
