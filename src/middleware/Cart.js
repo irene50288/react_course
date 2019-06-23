@@ -25,7 +25,7 @@ function loadState() {
 
 export default store => next => action => {
 
-  const actions = [types.ADD_TO_CART, types.REMOVE_FROM_CART, types.LOAD_CART_STATE]
+  const actions = [types.ADD_TO_CART, types.REMOVE_FROM_CART, types.LOAD_CART_STATE, types.CLEAR_CART];
 
   if (!actions.includes(action.type) )
     return next(action);
